@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!--
+  Base HTML Template for SoDA Website
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Software Developers Association @ ASU</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link  rel= "stylesheet" href="{% static "material.min.css" %}" type"text/css">
+    <link rel="stylesheet" href="{% static "styles.css" %}" type="text/css">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+
+        .waterfall-demo-header-nav .mdl-navigation__link:last-of-type  {
+  padding-right: 0;
+}
+
+    </style>
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
+        <header class="mdl-layout__header mdl-layout__header--waterfall mdl-color--black">
+          
+            
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h2>SoDA@ASU(LOGO HERE)</h2>
+            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row mdl-js-ripple-effect mdl-color--dark-blue">
+                <div class="mdl-layout-spacer"></div>
+                <nav class="waterfall-demo-header-nav mdl-navigation">
+                    <a href="/post/" class="mdl-layout__tab is_active">Welcome</a>
+                    <a href="/post/announcements/" class="mdl-layout__tab">Announcements</a>
+                    <a href="/post/competitions/" class="mdl-layout__tab">Competitions</a>
+                    <a href="/post/calendar/" class="mdl-layout__tab">Calendar</a>
+                    <a href="/post/about-us/" class="mdl-layout__tab">About Us</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-color--dark-blue">
+            <span class="mdl-layout-title">SoDA@ASU</span>
+            <nav class="mdl-navigation">
+                <a href="/post/" class="mdl-navigation__link">Welcome</a>
+                <a href="/post/announcements" class="mdl-navigation__link">Announcements</a>
+                <a href="/post/competitions" class="mdl-navigation__link">Competitons</a>
+                <a href="/post/calendar" class="mdl-navigation__link">Calendar</a>
+                <a href="/post/aboutus" class="mdl-navigation__link">About Us</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <!--Add Content Here -->
+            {% block body_block %}
+
+            {% endblock %}
+
+        </main>
+
+<footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer--bottom-section">
+
+                <ul class="mdl-mega-footer--link-list">
+                    <li>Copyright © 2015 Software Developers Association @ ASU, All Rights Reserved</li>
+                </ul>
+            </div>
+        </footer>
+        <script src="{% static 'material.min.js' %}"></script>
+</body>
+
+</html>
