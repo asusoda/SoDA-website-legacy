@@ -10,7 +10,7 @@ class PostInfo(models.Model):
 
 	body = models.TextField(verbose_name="Text Body of the post")
 
-	location = models.CharField(unique=False,verbose_name="Location of the annuncement")
+	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100)
 
 	location_boolean = models.BooleanField(default=False,verbose_name="Will this post have a location")
 	#Test ImageField.height_field/.width_field for the material cards
@@ -38,4 +38,4 @@ class Competition(PostInfo):
 class Announcement(PostInfo):
 	#True if post needs to be the headline
 	#Organized based on dates
-	headline = models.BooleanField()
+	headline = models.BooleanField(default=False)
