@@ -10,14 +10,14 @@ class PostInfo(models.Model):
 
 	body = models.TextField(verbose_name="Text Body of the post")
 
-	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100)
-
-	location_boolean = models.BooleanField(default=False,verbose_name="Will this post have a location")
+	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100, blank=True)
 	#Test ImageField.height_field/.width_field for the material cards
-	image = models.ImageField(default=False)
+	image = models.ImageField(blank=True)
 	#Makes PostInfo Abstract 
 	class Meta:
 		abstract = True
+	def __unicode__(self):
+		return self.title
 
 #Posts card to competition section of the site
 #inherits from PostInfo
@@ -34,8 +34,14 @@ class Competition(PostInfo):
 		)
 	#Admin can pick what type of coding event 
 	competition_type = models.CharField(max_length=50,choices=TYPE_OF_HACK,default='General Hacks')
+	
+	def __unicode__(self):
+		return self.title
 #Updates the announcements page 
 class Announcement(PostInfo):
 	#True if post needs to be the headline
 	#Organized based on dates
 	headline = models.BooleanField(default=False)
+
+	def __uncode__(self):
+		return self.title
