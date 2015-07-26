@@ -67,35 +67,39 @@
     </style>
 </head>
 
-<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
-        <header class="mdl-layout__header mdl-layout__header--waterfall mdl-color--black">
-          
-            
+<body class="soda mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button"> 
+        <header class="mdl-layout__header mdl-layout__header--waterfall mdl-color--indigo">
             <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-                <h2>SoDA@ASU(LOGO HERE)</h2>
+                <span class="mdl-layout-title">SoDA@ASU (logo here)</span>
             </div>
-            <div class="mdl-layout--large-screen-only mdl-layout__header-row mdl-js-ripple-effect mdl-color--dark-blue">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row mdl-js-ripple-effect mdl-color--indigo">
                 <div class="mdl-layout-spacer"></div>
-                <nav class="waterfall-demo-header-nav mdl-navigation">
-                    <a href="/post/" class="mdl-layout__tab is_active">Welcome</a>
-                    <a href="/post/announcements/" class="mdl-layout__tab">Announcements</a>
-                    <a href="/post/competitions/" class="mdl-layout__tab">Competitions</a>
-                    <a href="/post/calendar/" class="mdl-layout__tab">Calendar</a>
-                    <a href="/post/about-us/" class="mdl-layout__tab">About Us</a>
+                <nav class="mdl-navigation">
+                    <a href="/post/" class= "{{ welcome }}">Welcome</a>
+                    <a href="/post/announcements/" class="{{ announcements }}">Announcements</a>
+                    <a href="/post/competitions/" class="{{ competitions }}">Competitions</a>
+                    <a href="/post/calendar/" class="{{ calendar }}">Calendar</a>
+                    <a href="/post/about-us/" class="{{ aboutus }}">About Us</a>
                 </nav>
             </div>
         </header>
-        <div class="mdl-layout__drawer mdl-color--dark-blue">
-            <span class="mdl-layout-title">SoDA@ASU</span>
-            <nav class="mdl-navigation">
-                <a href="/post/" class="mdl-navigation__link">Welcome</a>
-                <a href="/post/announcements" class="mdl-navigation__link">Announcements</a>
-                <a href="/post/competitions" class="mdl-navigation__link">Competitons</a>
-                <a href="/post/calendar" class="mdl-navigation__link">Calendar</a>
-                <a href="/post/aboutus" class="mdl-navigation__link">About Us</a>
-            </nav>
-        </div>
+       <head class="mdl-layout__header">
+       <div class="mdl-layout--small-screen-only mdl-layout__header-row mdl-color--indigo">
+            <span class="mdl-layout-title">Test</span>
+       </div>
+       </head>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">SoDA@ASU</span>
+                <nav class="mdl-navigation">
+                    <a href="/post/" class="mdl-navigation__link">Welcome</a>
+                    <a href="/post/announcements" class="mdl-navigation__link">Announcements</a>
+                    <a href="/post/competitions" class="mdl-navigation__link">Competitons</a>
+                    <a href="/post/calendar" class="mdl-navigation__link">Calendar</a>
+                    <a href="/post/about-us" class="mdl-navigation__link">About Us</a>
+                </nav>
+            </div>
+        
         <main class="mdl-layout__content">
             <!--Add Content Here -->
             {% block body_block %}
@@ -104,15 +108,20 @@
 
         </main>
 
-<footer class="mdl-mega-footer">
+    <footer class="mdl-mega-footer">
             <div class="mdl-mega-footer--bottom-section">
 
                 <ul class="mdl-mega-footer--link-list">
                     <li>Copyright © 2015 Software Developers Association @ ASU, All Rights Reserved</li>
                 </ul>
             </div>
-        </footer>
+    </footer>
+</div>
         <script src="{% static 'js/material.min.js' %}"></script>
+        <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+                <script src="{% static 'js/hideshow.js' %}"></script>
+
+        
 </body>
 
 </html>

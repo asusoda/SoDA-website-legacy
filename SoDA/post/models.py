@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-#Model for updating the annuncements page 
+
 class PostInfo(models.Model):
 
 	title = models.CharField(unique=True,verbose_name="Title of post",max_length=100)
@@ -12,7 +12,7 @@ class PostInfo(models.Model):
 
 	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100, blank=True)
 	#Test ImageField.height_field/.width_field for the material cards
-	image = models.ImageField(blank=True)
+	image = models.ImageField(blank=True,upload_to ="static/images")
 	#Makes PostInfo Abstract 
 	class Meta:
 		abstract = True
@@ -30,7 +30,8 @@ class Competition(PostInfo):
 		('Current Travel Hack','Current SoDA Travel Hackathon'),
 		('Past Offical SoDA Hack', 'Past Offical SoDA Coding Competiton'),
 		('Current Offical SoDA Hack','Current Offical SoDA Hackathon'),
-		('General Hacks','General Hackathons and Coding Competitons')
+		('General Hacks','General Hackathons and Coding Competitons'),
+		('Past General Hacks','Past General Hackathons and Coding Competitons'),
 		)
 	#Admin can pick what type of coding event 
 	competition_type = models.CharField(max_length=50,choices=TYPE_OF_HACK,default='General Hacks')
@@ -43,5 +44,6 @@ class Announcement(PostInfo):
 	#Organized based on dates
 	headline = models.BooleanField(default=False)
 
-	def __uncode__(self):
+	def __unicode__(self):
 		return self.title
+

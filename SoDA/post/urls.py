@@ -10,6 +10,7 @@ urlpatterns = patterns('',
 	url(r'^competitions/',views.competitions,name='competitions'),
 	url(r'^calendar/',views.calendar,name='calendar'),
 	url(r'^about-us/',views.aboutus,name="about-us"),
+	url(r'^sponsors/',views.sponsors,name='sponsors'),
 	)
 
 
