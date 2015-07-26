@@ -1,17 +1,21 @@
 //script for hiding and showing cards/posts
 $(".card").click(function() {
-  console.log("Test");
-  $(this).siblings().removeClass("showMe").addClass("hideMe");
+  
+  $(".showMore").css("display", "block");
+  $('.showMe').not(this).each(function() {
+    $(this).removeClass("showMe").addClass("hideMe");
+    $(this).find(".mdl-card__actions").css("display","none");
+  });
   if ($(this).hasClass("hideMe") ) {
-  	console.log("if statement invoked")
     $(this).removeClass("hideMe").addClass("showMe").hide().fadeIn(500);
-    $(this).find(".mdl-card__actions").css("display", "none");
+    $(this).find('div').hasClass(".mdl-card__actions").css("display", "none");
   }
 });
-
+//removes the find more tag when the card is expanded
 $(document).ready(function() {
   $(".mdl-card__actions").each(function() {
-    if ($(this).prop('scrollHeight') === 0) {
+    if ($(this).children(".showMe")) {
+    	console.log("If past")
       $(this).removeClass(".mdl-card__actions");
     }
   });
