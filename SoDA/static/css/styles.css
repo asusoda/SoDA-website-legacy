@@ -274,3 +274,7 @@ html, body {
 .dontShow {
   display: hidden;
 }
+
+.hidewrapper {
+  postion: relative;
+}
