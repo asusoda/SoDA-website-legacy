@@ -29,9 +29,9 @@ def competitions(request):
 	#holds the objects for past hackathons SoDA has went to
 	context_dict['past_travel_hacks'] = Competition.objects.filter(competition_type='Past Travel Hackathon').order_by('-date')
 	#holds the objects for the current hackathons will travel to
-	context_dict['travel_hack'] = Competition.objects.filter(competition_type='Current SoDA Travel Hackathon').travel_hack.order_by('-date')
+	context_dict['travel_hack'] = Competition.objects.filter(competition_type='Current SoDA Travel Hackathon').order_by('-date')
 	#holds the object for the offical SoDA hackathon
-	context_dict['offical_hack'] = Competition.objects.filter(competition_type='Current SoDA Travel Hackathon').travel_hack.order_by('-date')
+	context_dict['offical_hack'] = Competition.objects.filter(competition_type='Current SoDA Travel Hackathon').order_by('-date')
 	#holds the objects for past offical SoDA hackathons 
 	context_dict['past_offical_hacks'] = Competition.objects.filter(competition_type='Past Offical SoDA Coding Competiton').order_by('-date')
 	#objects for General Hackathons
