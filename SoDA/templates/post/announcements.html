@@ -13,15 +13,18 @@
             <div class="mdl-card__media">
             	
             </div>
+            <div class="card hideMe">
                 <div class="mdl-card__supporting-text">
-            	    <div class="hideMe card">
+            	    <div>
             		   {{ story.body }}
             	    </div>
                 </div>
-                <div class="mdl-card__actions mdl-card--border">
+                <!--_
+                <div class="mdl-card__actions mdl-card--border showMe">
                         <a class="mdl-button">Click to find out more!</a>        
                 </div>
-
+                ---->
+            </div>
 </section>
 {% endfor %}
 {% endblock %}

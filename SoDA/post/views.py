@@ -9,6 +9,7 @@ def index(request):
 	context_dict = {}
 	context_dict.update(is_active)
 	context_dict['welcome'] = 'mdl-layout__tab is-active'
+	context_dict['current_page'] = "Welcome to SoDA!"
 	return render(request,'post/index.html',context_dict)
 
 def announcements(request):
@@ -16,7 +17,7 @@ def announcements(request):
 	context_dict = {}
 	context_dict.update(is_active)
 	context_dict['announcements'] = 'mdl-layout__tab is-active'
-	
+	context_dict['current_page'] = "Newsletter"
 	context_dict['news_post'] = Announcement.objects.exclude(headline=True).order_by('-date')
 
 	return render(request,'post/announcements.html',context_dict)
@@ -25,6 +26,7 @@ def competitions(request):
 
 	context_dict = {}
 	context_dict.update(is_active)
+	context_dict['current_page'] = "Competitons"
 	context_dict['competitions'] = 'mdl-layout__tab is-active'
 	#holds the objects for past hackathons SoDA has went to
 	context_dict['past_travel_hacks'] = Competition.objects.filter(competition_type='Past Travel Hackathon').order_by('-date')
@@ -44,16 +46,20 @@ def competitions(request):
 def calendar(request):
 	context_dict = {}
 	context_dict.update(is_active)
+	context_dict['current_page'] = 'Calendar'
 	context_dict['calendar'] = 'mdl-layout__tab is-active'
 	return render(request,'post/calendar.html',context_dict)
 
 def aboutus(request):
 	context_dict = {}
 	context_dict.update(is_active)
+	context_dict['current_page'] = "About Us"
 	context_dict['aboutus'] = 'mdl-layout__tab is-active'
 	return render(request,'post/about-us.html',context_dict)
 
 def sponsors(request):
 	context_dict = {}
 	context_dict.update(is_active)
+	context_dict['sponsors'] = 'mdl-layout__tab is-active'
+	context_dict['current_page'] = 'Sponsors'
 	return render(request,'post/sponsors.html')
