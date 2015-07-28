@@ -1,4 +1,4 @@
-//Loading the html pages instead of django
+//Loading the html pages instead of django 
 $( document ).ready(function() {
     function init(){
         $( '#main' ).load( 'main.html', function(){

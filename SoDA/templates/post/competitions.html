@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block body_block %}
+<div class="competition-title">
+   <section class="section--center mdl-grid">
+        <h3 class="title">Future Competitions</h3>
+   </section> 
+</div>
 {% for post in future_hacks %}
 
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
@@ -26,9 +31,13 @@
                 ---->
             </div>
 </section>
+
 {% endfor %}
-
-
+<div class="competition-title">
+<section class="section--center mdl-grid">
+    <h3 class="title">Past Competitions</h3>
+</section> 
+</div>
 {% for post in past_hacks %}
 
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
