@@ -54,4 +54,4 @@ def sponsors(request):
 	context_dict.update(is_active)
 	context_dict['sponsors'] = 'mdl-layout__tab is-active'
 	context_dict['current_page'] = 'Sponsors'
-	return render(request,'post/sponsors.html')
+	return render(request,'post/sponsors.html',context_dict)
