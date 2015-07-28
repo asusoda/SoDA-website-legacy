@@ -26,21 +26,13 @@ def competitions(request):
 
 	context_dict = {}
 	context_dict.update(is_active)
-	context_dict['current_page'] = "Competitons"
+	context_dict['current_page'] = "Competitions"
 	context_dict['competitions'] = 'mdl-layout__tab is-active'
-	#holds the objects for past hackathons SoDA has went to
-	context_dict['past_travel_hacks'] = Competition.objects.filter(competition_type='Past Travel Hackathon').order_by('-date')
-	#holds the objects for the current hackathons will travel to
-	context_dict['travel_hack'] = Competition.objects.filter(competition_type='Current SoDA Travel Hackathon').order_by('-date')
-	#holds the object for the offical SoDA hackathon
-	context_dict['offical_hack'] = Competition.objects.filter(competition_type='Current SoDA Travel Hackathon').order_by('-date')
-	#holds the objects for past offical SoDA hackathons 
-	context_dict['past_offical_hacks'] = Competition.objects.filter(competition_type='Past Offical SoDA Coding Competiton').order_by('-date')
-	#objects for General Hackathons
-	context_dict['general_hacks'] = Competition.objects.filter(competition_type='General Hackathons and Coding Competitons').order_by('-date')
-	#objects for past general hackathons	
-	context_dict['past_general_hacks'] = Competition.objects.filter(competition_type='Past General Hackathons and Coding Competitons').order_by('-dates')
-
+	#holds the objects for future hackathons 
+	context_dict['future_hacks'] = Competition.objects.filter(competition_type='upcoming hack').order_by('-date')
+	#holds the objects for the past hackathons 
+	context_dict['past_hacks'] = Competition.objects.filter(competition_type='past hacks').order_by('-date')
+	
  	return render(request,'post/competitions.html',context_dict)
 
 def calendar(request):

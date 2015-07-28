@@ -26,15 +26,11 @@ class Competition(PostInfo):
 	#Different types of coding competitons 
 	#Used to organize and query database in the view
 	TYPE_OF_HACK = (
-		('Past Travel Hacks', 'Past Travel Hackathon'),
-		('Current Travel Hack','Current SoDA Travel Hackathon'),
-		('Past Offical SoDA Hack', 'Past Offical SoDA Coding Competiton'),
-		('Current Offical SoDA Hack','Current Offical SoDA Hackathon'),
-		('General Hacks','General Hackathons and Coding Competitons'),
-		('Past General Hacks','Past General Hackathons and Coding Competitons'),
+		('past hacks', 'Past Hackathons/Coding Competitions'),
+		('upcoming hack','Future Hackathons/Coding Competitions'),
 		)
 	#Admin can pick what type of coding event 
-	competition_type = models.CharField(max_length=50,choices=TYPE_OF_HACK,default='General Hacks')
+	competition_type = models.CharField(max_length=50,choices=TYPE_OF_HACK,default='upcoming hacks')
 	
 	def __unicode__(self):
 		return self.title
