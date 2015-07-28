@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-
 {% block body_block %}
-{% for post in offical_hack %}
+{% for post in future_hacks %}
 
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
@@ -30,7 +29,7 @@
 {% endfor %}
 
 
-{% for post in past_offical_hacks %}
+{% for post in past_hacks %}
 
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
@@ -57,14 +56,45 @@
             </div>
 </section>
 {% endfor %}
-{% for post in  travel_hack %}
+
+
+{% for post in offical_hacks %}
 
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__title">
-                <h1 class="mdl-card__title-text">{{ story.title }}</h1>
+                <h1 class="mdl-card__title-text">{{ post.title }}</h1>
                 <div class="mdl-card__subtitle">
-                	<h4 class="mdl-card__subtitle-text">{{ story.date }}</h4>
+                    <h4 class="mdl-card__subtitle-text">{{ post.date }}</h4>
+                </div>
+            </div>
+            <div class="mdl-card__media">
+                
+            </div>
+            <div class="card hideMe">
+                <div class="mdl-card__supporting-text">
+                    <div>
+                       {{ post.body }}
+                    </div>
+                </div>
+                <!--_
+                <div class="mdl-card__actions mdl-card--border showMe">
+                        <a class="mdl-button">Click to find out more!</a>        
+                </div>
+                ---->
+            </div>
+</section>
+{% endfor %}
+
+
+{% for post in past_travel_hack %}
+
+ <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text">{{ post.title }}</h1>
+                <div class="mdl-card__subtitle">
+                	<h4 class="mdl-card__subtitle-text">{{ post.date }}</h4>
                 </div>
             </div>
             <div class="mdl-card__media">
@@ -73,7 +103,7 @@
             <div class="card hideMe">
                 <div class="mdl-card__supporting-text">
             	    <div>
-            		   {{ story.body }}
+            		   {{ post.body }}
             	    </div>
                 </div>
                 <!--_
