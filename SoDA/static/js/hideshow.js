@@ -1,4 +1,26 @@
 //script for hiding and showing cards/posts
+
+
+
+$(document).ready(function() {
+  $(".card").first().removeClass("hideMe").addClass("showMe");
+  $(".card").click(function() {
+    $('.showMe').not(this).each(function() {
+      $(this).removeClass("showMe").addClass("hideMe");
+    });
+    if ($(this).hasClass("hideMe") ) {
+      $(this).removeClass("hideMe").addClass("showMe").hide().fadeIn(500);
+   
+    }
+
+  });
+})
+
+
+
+
+
+/*
 $(".card").click(function() {
   
   $(".showMore").css("display", "block");
@@ -19,4 +41,4 @@ $(document).ready(function() {
       $(this).removeClass(".mdl-card__actions");
     }
   });
-});
+}); */
