@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from post.models import Announcement, Competition, Project
+from post.models import Announcement, Competition, Project, Sponsor
 
 # Create your views here.
 def index(request):
@@ -45,7 +45,10 @@ def sponsors(request):
 	
 	context_dict = {}
 	context_dict['current_page'] = 'Sponsors'
-	
+	context_dict['gold_tier'] = Sponsor.objects.filter(sponsorship_tier='Gold')
+	context_dict['silver_tier'] = Sponsor.objects.filter(sponsorship_tier='Silver')
+	context_dict['bronze_tier'] = Sponsor.objects.filter(sponsorship_tier='Bronze')
+
 	return render(request,'post/sponsors.html',context_dict)
 
 def projects(request):
@@ -54,4 +57,4 @@ def projects(request):
 	context_dict['current_page'] = 'Projects'
 	context_dict['club_projects'] = Project.objects.all().order_by('-date')
 
-	return render(request,'post/projects.html')
+	return render(request,'post/projects.html',context_dict)

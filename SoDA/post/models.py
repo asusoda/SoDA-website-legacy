@@ -18,11 +18,10 @@ class PostInfo(models.Model):
 	#Makes PostInfo Abstract 
 	class Meta:
 		abstract = True
+	
 	def __unicode__(self):
 		return self.title
 
-#Posts card to competition section of the site
-#inherits from PostInfo
 class Competition(PostInfo):
 	
 	#Different types of coding competitons 
@@ -36,10 +35,10 @@ class Competition(PostInfo):
 	
 	def __unicode__(self):
 		return self.title
-#Updates the announcements page 
+
+ 
 class Announcement(PostInfo):
-	#True if post needs to be the headline
-	#Organized based on dates
+	
 	headline = models.BooleanField(default=False)
 
 	def __unicode__(self):
@@ -51,3 +50,20 @@ class Project(PostInfo):
 
 	def __unicode__(self):
 		return self.title
+
+class Sponsor(models.Model):
+
+	sponsor_name = models.CharField(max_length=100,verbose_name="Name of Sponsor")
+	
+	TIERS = (
+		('Gold','Gold'),
+		('Silver',"Silver"),
+		('Bronze','Bronze'),
+		)
+
+	sponsorship_tier = models.CharField(max_length=100,verbose_name="Sponsorship Tier",choices=TIERS,default='Gold')
+
+	vector_image = models.ImageField(upload_to='static/images',verbose_name='Image of Company Logo')
+
+	def __unicode__(self):
+		return self.sponsor_name
