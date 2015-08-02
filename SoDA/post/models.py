@@ -6,13 +6,15 @@ class PostInfo(models.Model):
 
 	title = models.CharField(unique=True,verbose_name="Title of post",max_length=100)
 
-	date = models.DateField(verbose_name="Date of publication",auto_now_add=True)
+	date = models.DateField(verbose_name="Date of publication",auto_now_add=False)
 
 	body = models.TextField(verbose_name="Text Body of the post")
 
 	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100, blank=True)
 	#Test ImageField.height_field/.width_field for the material cards
-	image = models.ImageField(blank=True,upload_to ="static/images")
+	card_image = models.ImageField(blank=True,upload_to ="static/images")
+
+
 	#Makes PostInfo Abstract 
 	class Meta:
 		abstract = True
@@ -43,3 +45,9 @@ class Announcement(PostInfo):
 	def __unicode__(self):
 		return self.title
 
+class Project(PostInfo):
+	#Link used for git repo location
+	git_link = models.URLField(max_length=100,verbose_name="Link to Github repo")
+
+	def __unicode__(self):
+		return self.title

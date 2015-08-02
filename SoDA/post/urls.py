@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 	url(r'^calendar/',views.calendar,name='calendar'),
 	url(r'^about-us/',views.aboutus,name="about-us"),
 	url(r'^sponsors/',views.sponsors,name='sponsors'),
+	url(r'^projects/',views.projects,name='projects'),
 	)
 
 

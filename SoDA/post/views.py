@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from post.models import Announcement, Competition
+from post.models import Announcement, Competition, Project
 
 # Create your views here.
 def index(request):
@@ -28,17 +28,30 @@ def competitions(request):
  	return render(request,'post/competitions.html',context_dict)
 
 def calendar(request):
+	
 	context_dict = {}
 	context_dict['current_page'] = 'Calendar'
+	
 	return render(request,'post/calendar.html',context_dict)
 
 def aboutus(request):
+	
 	context_dict = {}
-
 	context_dict['current_page'] = "About Us"
+	
 	return render(request,'post/about-us.html',context_dict)
 
 def sponsors(request):
+	
 	context_dict = {}
 	context_dict['current_page'] = 'Sponsors'
+	
 	return render(request,'post/sponsors.html',context_dict)
+
+def projects(request):
+	
+	context_dict = {}
+	context_dict['current_page'] = 'Projects'
+	context_dict['club_projects'] = Project.objects.all().order_by('-date')
+
+	return render(request,'post/projects.html')
