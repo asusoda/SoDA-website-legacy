@@ -87,7 +87,7 @@ html, body {
   color: inherit;
   width: calc(100% - 80px);
 }
-.soda.soda .mdl-card__supporting-text h4 {
+.soda .mdl-card__supporting-text h4 {
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -218,63 +218,43 @@ html, body {
 .soda .mdl-card .mdl-card__supporting-text > h3:first-child {
   margin-bottom: 24px;
 }
-.soda .mdl-layout__tab-panel:not(#overview) {
-  background-color: white;
-}
-.soda #features section {
-  margin-bottom: 72px;
-}
-.soda #features h4, #features h5 {
-  margin-bottom: 16px;
-}
-.soda .toc {
-  border-left: 4px solid #C1EEF4;
-  margin: 24px;
-  padding: 0;
-  padding-left: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.soda .toc h4 {
-  font-size: 0.9rem;
-  margin-top: 0;
-}
-.soda .toc a {
-  color: #4DD0E1;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 28px;
-  display: block;
-}
+
 .soda .mdl-menu__container {
   z-index: 99;
 }
 
-.hideMe {
+.soda .hideMe {
   max-height: 100px;
   overflow: hidden;
 }
 
-.showMe {
+.soda .showMe {
   max-height: 100%;
 }
 
-.card {
+.soda .card {
   position: relative;
 }
 
 
-.dontShow {
+.soda .dontShow {
   display: hidden;
 }
 
-.hidewrapper {
+.soda .hidewrapper {
   postion: relative;
+}
+
+.soda .mdl-layout__content {
+  display: -webkit-flex;
+  display: flex;
+    -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.ensure-card-width {
+  width: 1000px;
+}
+
+.mdl-mini-footer {
+
 }

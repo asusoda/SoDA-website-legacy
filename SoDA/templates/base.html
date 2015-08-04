@@ -102,13 +102,22 @@
         <main class="mdl-layout__content">
             <!--Add Content Here -->
             {% block body_block %} {% endblock %}
-        </main>  
-    </div>
-    <script src="{% static 'js/material.min.js' %}"></script>
+            <br>
+             <div class="mdl-layout-spacer"></div>
+            
+            <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__lef-section">Copyright © 2014 Software Developers Association @ ASU, All Rights Reserved</div>
+        </footer>
+       
+        </main> 
+        
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+
     <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-    <script src="{% static 'js/hideshow.js' %}"></script>
+    <script src="{% static 'js/hideshow.js' %}"></script> 
+    <!--<script src="{% static 'js/script.js' %}"></script>
     <!-- <script src="{% static 'js/load.js' %}"></script> -->
     
 </body>
-
+ 
 </html>
