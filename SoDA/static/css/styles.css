@@ -194,7 +194,7 @@ html, body {
   width: 64px;
   height: 64px;
   border-radius: 32px;
-  margin: 8px 0;
+  margin: 1000px 0;
 }
 .soda section.section--footer .section__circle--big {
   width: 100px;
@@ -244,7 +244,7 @@ html, body {
 .soda .hidewrapper {
   postion: relative;
 }
-
+/*
 .soda .mdl-layout__content {
   display: -webkit-flex;
   display: flex;
@@ -252,9 +252,22 @@ html, body {
           flex-direction: column;
 }
 .ensure-card-width {
-  width: 1000px;
+ margin-bottom: 2.5em;
 }
-
+*/
 .mdl-mini-footer {
 
+}
+
+.material-icons.md-18 { 
+  font-size: 18px; 
+}
+.material-icons.md-24 { 
+  font-size: 24px; 
+}
+.material-icons.md-36 { 
+  font-size: 36px; 
+}
+.material-icons.md-48 { 
+  font-size: 48px; 
 }
