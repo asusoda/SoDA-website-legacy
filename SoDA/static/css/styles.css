@@ -194,7 +194,7 @@ html, body {
   width: 64px;
   height: 64px;
   border-radius: 32px;
-  margin: 1000px 0;
+  margin: 8px 0;
 }
 .soda section.section--footer .section__circle--big {
   width: 100px;
@@ -270,4 +270,8 @@ html, body {
 }
 .material-icons.md-48 { 
   font-size: 48px; 
+}
+
+.soda .mdl-card__media {
+  height: 200px;
 }
