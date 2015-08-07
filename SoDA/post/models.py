@@ -12,7 +12,7 @@ class PostInfo(models.Model):
 
 	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100, blank=True)
 	#Test ImageField.height_field/.width_field for the material cards
-	card_image = models.ImageField(blank=True,upload_to ="static/images")
+	card_image = models.ImageField(blank=True)
 
 
 	#Makes PostInfo Abstract 

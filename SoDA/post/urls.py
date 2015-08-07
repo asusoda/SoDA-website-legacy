@@ -1,7 +1,6 @@
 from django.conf import settings 
 from django.conf.urls import patterns, url
 from post import views
-from django.conf.urls.static import static
 
 
 urlpatterns = patterns('',
@@ -19,3 +18,8 @@ urlpatterns = patterns('',
 if settings.DEBUG:
 	from django.conf.urls.static import static
 	urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+	urlpatterns += patterns(
+		'django.views.static',
+		(r'^media/(?P<path>.*)',
+		'serve' ,
+		{'document_root': settings.MEDIA_ROOT}),)

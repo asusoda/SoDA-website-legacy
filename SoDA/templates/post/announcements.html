@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block body_block %} {% for story in news_post %}
+{% extends "base.html" %} {% block body_block %} 
+{% for story in news_post %}
 
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
@@ -10,7 +11,8 @@
                 </div>
             </div>
     -->
-            <div class="mdl-card__media" background="{{ story.card_image.url }}" >
+            <div class="mdl-card__media">
+                <img src="{{ story.card_image.url }}">
                 <div class="mdl-card_title">
                      <h4 class="mdl-card_title-text">{{ story.title }}</h4>
                 </div>
