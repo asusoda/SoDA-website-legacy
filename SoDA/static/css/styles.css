@@ -275,3 +275,10 @@ html, body {
 .soda .mdl-card__media {
   height: 200px;
 }
+
+.soda .mdl-card__media .background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
