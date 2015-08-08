@@ -11,15 +11,13 @@ urlpatterns = patterns('',
 	url(r'^about-us/',views.aboutus,name="about-us"),
 	url(r'^sponsors/',views.sponsors,name='sponsors'),
 	url(r'^projects/',views.projects,name='projects'),
-	)
-
+	) 
 
 
 if settings.DEBUG:
 	from django.conf.urls.static import static
 	urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
-	urlpatterns += patterns(
-		'django.views.static',
-		(r'^media/(?P<path>.*)',
-		'serve' ,
-		{'document_root': settings.MEDIA_ROOT}),)
+
+	urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.MEDIA_ROOT}))

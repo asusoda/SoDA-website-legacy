@@ -12,3 +12,10 @@ urlpatterns = patterns('',
     url(r'^post/',include('post.urls')),
     url(r'^$',views.index,name='index')
 )
+if settings.DEBUG:
+	from django.conf.urls.static import static
+	urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+
+	urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.MEDIA_ROOT}))
