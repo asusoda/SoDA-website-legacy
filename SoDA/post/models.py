@@ -11,9 +11,12 @@ class PostInfo(models.Model):
 	body = models.TextField(verbose_name="Text Body of the post")
 
 	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100, blank=True)
-	#Test ImageField.height_field/.width_field for the material cards
+	
 	card_image = models.ImageField(blank=True)
 
+	link_title = models.CharField(verbose_name="Link name",max_length="100",blank=True,unique=False,default="")
+
+	link_url = models.URLField(verbose_name="URL for Link",blank=True,unique=False,default="")
 
 	#Makes PostInfo Abstract 
 	class Meta:
@@ -45,8 +48,10 @@ class Announcement(PostInfo):
 		return self.title
 
 class Project(PostInfo):
-	#Link used for git repo location
-	git_link = models.URLField(max_length=100,verbose_name="Link to Github repo")
+	
+	git_name = models.CharField(max_length=100,verbose_name="Name of Github repo",blank=True,default="")
+
+	git_link = models.URLField(verbose_name="Link to Github repo",blank=True)
 
 	def __unicode__(self):
 		return self.title
@@ -63,7 +68,7 @@ class Sponsor(models.Model):
 
 	sponsorship_tier = models.CharField(max_length=100,verbose_name="Sponsorship Tier",choices=TIERS,default='Gold')
 
-	vector_image = models.ImageField(upload_to='static/images',verbose_name='Image of Company Logo')
+	vector_image = models.ImageField(verbose_name='Image of Company Logo')
 
 	def __unicode__(self):
 		return self.sponsor_name
