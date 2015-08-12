@@ -110,12 +110,6 @@ html, body {
 .soda .mdl-card__supporting-text + .mdl-card__actions {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
-.soda #add {
-  position: absolute;
-  right: 40px;
-  top: 36px;
-  z-index: 999;
-}
 
 .soda .mdl-layout__content section:not(:last-of-type) {
   position: relative;
@@ -215,32 +209,23 @@ html, body {
 .soda section.section--center .section__text:not(:last-child) {
   border-bottom: 1px solid rgba(0,0,0,.13);
 }
-.soda .mdl-card .mdl-card__supporting-text > h3:first-child {
-  margin-bottom: 24px;
-}
-
 .soda .mdl-menu__container {
   z-index: 99;
 }
-
 .soda .hideMe {
   max-height: 100px;
   overflow: hidden;
 }
-
 .soda .showMe {
   max-height: 100%;
 }
-
 .soda .card {
   position: relative;
 }
 
-
 .soda .dontShow {
   display: none;
 }
-
 .soda .hidewrapper {
   postion: relative;
 }
@@ -251,14 +236,7 @@ html, body {
     -webkit-flex-direction: column;
           flex-direction: column;
 }
-.ensure-card-width {
- margin-bottom: 2.5em;
-}
 */
-.mdl-mini-footer {
-
-}
-
 .material-icons.md-18 { 
   font-size: 18px; 
 }
@@ -274,37 +252,22 @@ html, body {
 .material-icons .color {
   color: blue;
 }
-
-.soda .mdl-card__media img {
-  max-width: auto;
-  height: 300px;
-
-
-}
-
 .soda .mdl-card__media {
   height: 486px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-
-.soda .mdl-card__title .mdl-card__title-text {
-  /*
-  margin-top: 5px;
-  margin-left: -10px;
-  */
-}
-
 .soda .mdl-card__title .mdl-card__subtitle-text {
   margin-left: 5px;
 }
-
-
- .soda .expand {
-
+.soda .section__circle-container .material-icons {
+  position: relative;
+  left: 20px;
  }
+.soda .mdl-card__actions .expand-button{
+  float: right;
+}
 
- .soda .section__circle-container .material-icons {
-    position: relative;
-    left: 20px;
- }
+.soda .mdl-card__actions .card-link1 {
+  
+}

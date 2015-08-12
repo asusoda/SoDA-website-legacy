@@ -12,14 +12,18 @@
                      <h4 class="mdl-card__title-text">{{ story.title }}</h4>
                      <h5 class="mdl-card__subtitle-text">{{ story.date }}</h5>
                 </div>
+
             <div class="mdl-card__supporting-text">
-            	<div class="hideMe">
-            		   {{ story.body }}
-            	</div>
+                <div class="hideMe">
+                       {{ story.body }}
+                </div>
             </div>
             <div class="mdl-card__actions">
-                <div class="card-button mdl-button mdl-js-ripple-effect">
-                    <i class="material-icons md-36 expand">expand_more</i>
+                {% if story.link_title %}
+                    <a href="{{ story.link_url }}" class="mdl-button">{{ story.link_title }}</a>
+                {% endif %}
+                <div class="card-button mdl-button expand-button">
+                    <i class="material-icons md-36">expand_more</i>
                 </div>
             </div>
            
