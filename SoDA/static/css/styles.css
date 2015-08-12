@@ -38,30 +38,6 @@ html, body {
 .soda .mdl-layout:not(.is-small-screen) .mdl-layout__drawer-button {
   display: none;
 }
-.soda .mdl-layout__tab-bar-container {
-  overflow: visible;
-  height: 64px;
-}
-.soda .mdl-layout__tab-bar {
-  overflow: visible;
-  position: relative;
-  padding: 0;
-  padding-left: 16px;
-  height: 100%;
-  width: 100%;
-}
-.soda .mdl-layout__tab-bar .mdl-layout__tab {
-  height: 64px;
-  line-height: 64px;
-}
-.soda .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
-  background-color: white;
-  height: 4px;
-}
-.soda main > .mdl-layout__tab-panel {
-  padding: 8px;
-  padding-top: 48px;
-}
 .soda .mdl-card {
   height: auto;
   display: -webkit-box;
@@ -93,8 +69,6 @@ html, body {
 }
 .soda .mdl-card__actions {
   margin: 0;
- /*padding: 4px 40px;
- */
   color: inherit;
 
 }
@@ -213,8 +187,11 @@ html, body {
   z-index: 99;
 }
 .soda .hideMe {
+  display: none;
+  /*
   max-height: 100px;
   overflow: hidden;
+  */
 }
 .soda .showMe {
   max-height: 100%;
@@ -269,5 +246,5 @@ html, body {
 }
 
 .soda .mdl-card__actions .card-link1 {
-  
+
 }
