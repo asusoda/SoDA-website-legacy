@@ -1,4 +1,5 @@
 //script to expand and hide cards 
+
 $(document).ready(function () {
     $('.hideMe').first().removeClass('hideMe').addClass('showMe');
     $('.card-button').first().addClass('dontShow');
@@ -13,7 +14,7 @@ $(document).ready(function () {
         }
         $('main').animate({
             scrollTop: $(this).closest('section')[0].offsetTop - 100
-        }, 1000);
+        }, 800);
 
     });
 })

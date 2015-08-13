@@ -26,17 +26,14 @@ html, body {
 .soda .mdl-layout.is-small-screen .mdl-layout__tab-bar-container {
   display: none;
 }
-.soda .mdl-layout.is-small-screen .mdl-layout__header-row {
+.soda  .mdl-layout__header-row {
   padding-left: 60px;
 }
 .soda .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
   font-size: inherit;
 }
-.soda .mdl-layout__tab-bar-button {
-  display: none;
-}
 .soda .mdl-layout:not(.is-small-screen) .mdl-layout__drawer-button {
-  display: none;
+  
 }
 .soda .mdl-card {
   height: auto;
@@ -62,10 +59,6 @@ html, body {
   padding: 0;
   color: inherit;
   width: calc(100% - 80px);
-}
-.soda .mdl-card__supporting-text h4 {
-  margin-top: 0;
-  margin-bottom: 10px;
 }
 .soda .mdl-card__actions {
   margin: 0;
@@ -106,9 +99,6 @@ html, body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.soda section > .section__play-btn {
-  min-height: 200px;
 }
 .soda section > header > .material-icons {
   font-size: 3rem;
