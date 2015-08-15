@@ -12,11 +12,11 @@ class PostInfo(models.Model):
 
 	location = models.CharField(unique=False,verbose_name="Location of the annuncement",max_length=100, blank=True)
 	
-	card_image = models.ImageField(blank=True)
+	card_image = models.ImageField(verbose_name="Image for mdl-card__media",blank=True)
 
-	link_title = models.CharField(verbose_name="Link name",max_length="100",blank=True,unique=False,default="")
+	link_title = models.CharField(verbose_name="General Link name",max_length="100",blank=True,unique=False,default="")
 
-	link_url = models.URLField(verbose_name="URL for Link",blank=True,unique=False,default="")
+	link_url = models.URLField(verbose_name="General URL for Link",blank=True,unique=False,default="")
 
 	#Makes PostInfo Abstract 
 	class Meta:
@@ -35,6 +35,13 @@ class Competition(PostInfo):
 		)
 	#Admin can pick what type of coding event 
 	competition_type = models.CharField(max_length=50,choices=TYPE_OF_HACK,default='upcoming hacks')
+
+	competition_website = models.CharField(verbose_name="Name of the Competition Website",max_length=100,blank=True,default="")
+
+	competition_website_url = models.URLField(verbose_name="URL for Competition Website",blank=True,unique=False,default="")
+
+	google_map = models.TextField(verbose_name="iframe for google map",blank=True,unique=False,default="")
+
 	
 	def __unicode__(self):
 		return self.title
