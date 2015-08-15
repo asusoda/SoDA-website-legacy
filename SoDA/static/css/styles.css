@@ -1,7 +1,11 @@
+* {
+  margin: 0;
+}
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 .soda .mdl-layout__header-row {
   padding-left: 40px;
@@ -222,3 +226,16 @@ html, body {
 .soda .mdl-card__actions .card-link1 {
 
 }
+.soda .pusher {
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+
+.soda .pusher:after {
+  content: "";
+  display: block;
+}
+.soda .mdl-mini-footer, .pusher:after {
+  height: 40px;
+}
+
