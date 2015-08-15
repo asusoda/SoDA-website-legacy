@@ -9,18 +9,27 @@
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__title">
-                <h1 class="mdl-card__title-text">{{ post.title }}</h1>
-                <h4 class="mdl-card__subtitle-text">{{ post.date }}</h4>
+                <h4 class="mdl-card__title-text">{{ post.title }}</h4>
+                <h5 class="mdl-card__subtitle-text">{{ post.date }}</h5>
             </div>
-            
-            <div class="card hideMe">
-                <div class="mdl-card__supporting-text">
-            	    <div>
-            		   {{ post.body }}
-            	    </div>
+            {% if post.card_image %}
+            <div class="mdl-card__media" style="background: url('{{ post.card_image.url }}') center no-repeat;">
+            </div>
+            {% endif %}
+            <div class="mdl-card__actions">
+                {% if post.link_title %}
+                    <a href="{{ post.link_url }}" class="mdl-button">{{ post.link_title }}</a>
+                {% endif %}
+                <div class="card-button mdl-button expand-button">
+                    <i class="material-icons md-36">expand_more</i>
                 </div>
             </div>
-</section>
+            <div class="mdl-card__supporting-text">
+            	<div class="hideMe">
+            		   {{ post.body }}
+                </div>
+            </div>
+    </section>
 
 {% endfor %}
 <div class="competition-title">
@@ -33,18 +42,25 @@
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__title">
-                <h1 class="mdl-card__title-text">{{ post.title }}</h1>
-                <div class="mdl-card__subtitle">
-                	<h4 class="mdl-card__subtitle-text">{{ post.date }}</h4>
+                <h4 class="mdl-card__title-text">{{ post.title }}</h4>
+                <h5 class="mdl-card__subtitle-text">{{ post.date }}</h5>
+            </div>
+            {% if post.card_image %}
+            <div class="mdl-card__media" style="background: url('{{ post.card_image.url }}') center no-repeat;">
+            </div>
+            {% endif %}
+            <div class="mdl-card__actions">
+                {% if story.link_title %}
+                    <a href="{{ post.link_url }}" class="mdl-button">post.link_title</a>
+                {% endif %}
+                <div class="card-button mdl-button expand-button">
+                    <i class="material-icons md-36">expand_more</i>
                 </div>
             </div>
-            
-            <div class="card hideMe">
-                <div class="mdl-card__supporting-text">
-            	    <div>
+            <div class="mdl-card__supporting-text">
+            	<div class="hideMe">
             		   {{ post.body }}
-            	    </div>
-                </div>
+            	</div>
             </div>
 </section>
 {% endfor %}
