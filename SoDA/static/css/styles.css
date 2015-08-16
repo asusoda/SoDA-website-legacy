@@ -39,7 +39,7 @@ html, body {
   height: auto;
 }
 .soda .mdl-card .mdl-card__supporting-text {
-  margin: 18px;
+  margin: 16px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -166,10 +166,6 @@ html, body {
 }
 .soda .hideMe {
   display: none;
-  /*
-  max-height: 100px;
-  overflow: hidden;
-  */
 }
 .soda .showMe {
   max-height: 100%;
@@ -182,16 +178,9 @@ html, body {
   display: none;
 }
 .soda .hidewrapper {
-  postion: relative;
+  position: relative;
 }
-/*
-.soda .mdl-layout__content {
-  display: -webkit-flex;
-  display: flex;
-    -webkit-flex-direction: column;
-          flex-direction: column;
-}
-*/
+
 .material-icons.md-18 { 
   font-size: 18px; 
 }
@@ -223,12 +212,9 @@ html, body {
   float: right;
 }
 
-.soda .mdl-card__actions .card-link1 {
-
-}
 .soda .pusher {
   min-height: 100%;
-  margin-bottom: -40px;
+  margin-bottom: -30px;
 }
 
 .soda .pusher:after {
@@ -236,6 +222,6 @@ html, body {
   display: block;
 }
 .soda .mdl-mini-footer, .pusher:after {
-  height: 40px;
+  height: 30px;
 }
 
