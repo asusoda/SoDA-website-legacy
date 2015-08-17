@@ -1,6 +1,8 @@
 $(document).ready(function () {
     $('.hideMe').first().removeClass('hideMe').addClass('showMe');
     $('.card-button').first().addClass('dontShow');
+    $('.mdl-card__supporting-text').first().css('margin','18px');
+
     hideShow();
 })
 
@@ -20,10 +22,12 @@ function hideShow() {
     $('.card-button').click(function () {
         $('.card-button').parent().siblings('.mdl-card__supporting-text').children('.showMe').not(this).each(function () {
             $(".card-button").parent().siblings('.mdl-card__supporting-text').children('.showMe').removeClass("showMe").addClass("hideMe");
+            $('.card-button').parent().siblings('.mdl-card__supporting-text').css('margin','0px');           
             $(".card-button").removeClass('dontShow');
         });
         if ($(this).parent().siblings('.mdl-card__supporting-text').children('.hideMe').length) {
             $(this).parent().siblings('.mdl-card__supporting-text').children('.hideMe').removeClass('hideMe').addClass('showMe');
+            $(this).parent().siblings('.mdl-card__supporting-text').css('margin','18px');
             $(this).addClass('dontShow');
         }
         $('main').animate({
