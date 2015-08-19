@@ -1,35 +1,50 @@
 {% extends 'base.html' %} {% block body_block %}
-<div class="competition-title">
+<div class="future-competition-title">
    <section class="section--center mdl-grid">
-        <h3 class="title">Future Competitions</h3>
+        <h2 class="title">Future Competitions</h2>
    </section> 
 </div>
 {% for post in future_hacks %}
-
+<div class="competition-title">
+    <section class="section--center mdl-grid">
+        <h3 class="title">{{ post.title }}<h3>
+    </section>
+</div>
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__title">
-                <h4 class="mdl-card__title-text">{{ post.title }}</h4>
-                <h5 class="mdl-card__subtitle-text">{{ post.date }}</h5>
+                <h4 class="mdl-card__title-text">General Information</h4>
             </div>
             {% if post.card_image %}
             <div class="mdl-card__media" style="background: url('{{ post.card_image.url }}') center no-repeat;">
             </div>
             {% endif %}
-            <div class="mdl-card__actions">
-                {% if post.link_title %}
-                    <a href="{{ post.link_url }}" class="mdl-button">{{ post.link_title }}</a>
-                {% endif %}
-                <div class="card-button mdl-button expand-button">
-                    <i class="material-icons md-36">expand_more</i>
-                </div>
-            </div>
             <div class="mdl-card__supporting-text">
-            	<div class="hideMe">
-            		   {{ post.body }}
-                </div>
+                    {{ post.body }}
             </div>
-    </section>
+            <div class="mdl-card__actions">
+                <a href="{{ post.link_url }}" class="mdl-button">Competition Site</a>
+            </div>
+</section>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card__title">
+            <h4 class="mdl-card__title-text">Location</h4>
+        </div>
+        {% if post.google_map %}
+        <div class="mdl-card__media">
+            {{ post.google_map }}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="mdl-card__supporting-text">
+        {% if post.location_text %}
+        {{ post.location_text }}
+        {% endif %}
+    </div>
+</section>
 
 {% endfor %}
 <div class="competition-title">
