@@ -1,20 +1,24 @@
 {% extends "base.html" %} {% block body_block %} 
 <br>
-{% for story in news_post %}
+{% for post in news_post %}
 
  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card content-card mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__title">
-                     <h4 class="mdl-card__title-text">{{ story.title }}</h4>
-                     <h5 class="mdl-card__subtitle-text">{{ story.date }}</h5>
+                     <h4 class="mdl-card__title-text">{{ post.announcement_title }}</h4>
+                     <h5 class="mdl-card__subtitle-text">{{ post.announcement_date }}</h5>
             </div>
-            {% if story.card_image %}
-            <div class="mdl-card__media" style="background: url('{{ story.card_image.url }}') center no-repeat;">
+            {% if post.announcement_image %}
+            <div class="mdl-card__media" style="background: url('{{ post.announcement_image.url }}') center no-repeat;">
             </div>
             {% endif %}
             <div class="mdl-card__actions">
-                {% if story.link_title %}
-                    <a href="{{ story.link_url }}" class="mdl-button">{{ story.link_title }}</a>
+                {% if post.link1 %}
+                    <a href="{{ post.link1 }}" class="mdl-button">{{ post.link1_name }}</a>
+                {% endif %}
+                {% if post.link2 %}
+                    <a href="{{ post.link2 }}" class="mdl-button">{{ post.link2_name }}</a>
+
                 {% endif %}
                 <div class="card-button mdl-button expand-button">
                     <i class="material-icons md-36">expand_more</i>
@@ -22,7 +26,7 @@
             </div>
             <div class="mdl-card__supporting-text">
                 <div class="hideMe">
-                       {{ story.body }}
+                       {{ post.announcement_body }}
                 </div>
             </div>
 </section>

@@ -16,14 +16,14 @@
                 <h4 class="mdl-card__title-text">General Information</h4>
             </div>
             {% if post.card_image %}
-            <div class="mdl-card__media" style="background: url('{{ post.card_image.url }}') center no-repeat;">
+            <div class="mdl-card__media" style="background: url('{{ post.c.url }}') center no-repeat;">
             </div>
             {% endif %}
             <div class="mdl-card__supporting-text">
-                    {{ post.body }}
+                    {{ post.competition_basic_information }}
             </div>
             <div class="mdl-card__actions">
-                <a href="{{ post.link_url }}" class="mdl-button">Competition Site</a>
+                <a href="{{ post.competition_website }}" class="mdl-button">{{ post.competition_website_name }}</a>
             </div>
 </section>
 
@@ -49,7 +49,7 @@
 {% endfor %}
 <div class="competition-title">
 <section class="section--center mdl-grid">
-    <h3 class="title">Past Competitions</h3>
+    <h2 class="title">Past Competitions</h2>
 </section> 
 </div>
 {% for post in past_hacks %}
