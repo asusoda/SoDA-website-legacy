@@ -2,13 +2,13 @@ from django.contrib import admin
 from post.models import Competition,Announcement,Project,Sponsor
 
 class AnnouncementAdmin(admin.ModelAdmin):
-	fields =('title','date','body','card_image','link_title','link_url')
+	fields =('announcement_title','announcement_date','announcement_body','announcement_image','announcement_location','link1_name','link1','link2_name','link2')
 
 class CompetitionAdmin(admin.ModelAdmin):
-	fields = ('title','date','body','competition_type','competition_website','competition_website_url','card_image','google_map','link_title','link_url')
+	fields = ('competition_name','competition_date','competition_image','competition_basic_information','competition_website_name','competition_website','competition_map','competition_location_info','travel_inforamtion','travel_map','competition_type')
 
 class ProjectAdmin(admin.ModelAdmin):
-	fields =('title','date','body','card_image','git_name','git_link')
+	fields =('project_title','project_image','project_body','git_name','git_link')
 
 class SponsorAdmin(admin.ModelAdmin):
 	fields = ('sponsor_name','sponsorship_tier','vector_image')

@@ -12,7 +12,7 @@ def announcements(request):
 	#Holds the queries to be dislayed on the front end
 	context_dict = {}
 	context_dict['current_page'] = "Newsletter"
-	context_dict['news_post'] = Announcement.objects.exclude(headline=True).order_by('-date')
+	context_dict['news_post'] = Announcement.objects.all().order_by('-announcement_date')
 
 	return render(request,'post/announcements.html',context_dict)
 
@@ -21,9 +21,9 @@ def competitions(request):
 	context_dict = {}
 	context_dict['current_page'] = "Competitions"
 	#holds the objects for future hackathons 
-	context_dict['future_hacks'] = Competition.objects.filter(competition_type='upcoming hack').order_by('-date')
+	context_dict['future_hacks'] = Competition.objects.filter(competition_type='upcoming hack').order_by('-competition_date')
 	#holds the objects for the past hackathons 
-	context_dict['past_hacks'] = Competition.objects.filter(competition_type='past hacks').order_by('-date')
+	context_dict['past_hacks'] = Competition.objects.filter(competition_type='past hacks').order_by('-competition_date')
 	
  	return render(request,'post/competitions.html',context_dict)
 
