@@ -55,6 +55,6 @@ def projects(request):
 	
 	context_dict = {}
 	context_dict['current_page'] = 'Projects'
-	context_dict['club_projects'] = Project.objects.all().order_by('-date')
+	context_dict['club_projects'] = Project.objects.all().order_by('-project_post_date')
 
 	return render(request,'post/projects.html',context_dict)

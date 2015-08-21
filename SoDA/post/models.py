@@ -34,7 +34,7 @@ class Competition(models.Model):
 
 	competition_image =models.ImageField(verbose_name="Optional Card image for the competition",blank=True)
 
-	competiton_basic_information = models.TextField(verbose_name="General Information about the competition")
+	competition_basic_information = models.TextField(verbose_name="General Information about the competition")
 
 	competition_website = models.URLField(verbose_name="URL for competition website")
 
@@ -67,6 +67,8 @@ class Project(models.Model):
 	project_image = models.ImageField(verbose_name="Optional Image for the project",blank=True)
 
 	project_body = models.TextField(verbose_name="Descriptiong of the project")
+	
+	project_post_date = models.DateField(verbose_name="Date Project was started",default=datetime.date.today)
 	
 	git_name = models.CharField(max_length=100,verbose_name="Name of Github repo",blank=True,default="")
 
