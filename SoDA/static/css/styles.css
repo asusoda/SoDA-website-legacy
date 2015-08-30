@@ -14,6 +14,19 @@ html, body {
 .soda .mdl-layout.is-small-screen .mdl-layout__tab-bar-container {
   display: none;
 }
+
+.soda .mdl-layout.is-small-screen .logoheader {
+  width: 150px;
+  height: 40px;
+}
+
+.soda .mdl-layout.is-small-screen .logoheader img {
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+
 .soda  .mdl-layout__header-row {
   padding-left: 60px;
 }
@@ -236,4 +249,13 @@ html, body {
 .soda .mdl-mini-footer, .pusher:after {
   height: 30px;
 }
+.soda .logoheader {
+  width: 200px;
+  height: 60px;
+}
 
+.soda .logoheader img {
+  border: none;
+  display: block;
+  margin: 0 auto;
+}

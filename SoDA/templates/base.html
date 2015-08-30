@@ -21,13 +21,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="description" content="SoDA Wensite">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Software Developers Association @ ASU</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+    <link rel="icon" sizes="192x192" href="{% static 'static/images/dot_slash_SoDA_tab_web_icon.png' %}">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,32 +70,25 @@
 
 <body class="soda mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
+        <header class="mdl-layout__header mdl-color--black">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">SoDA@ASU (logo here)</span>
-
+                    <img class="logoheader" src="{% static 'images/dot_slash_SoDA_website.png' %}"></img>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation desktop-header mdl-layout--large-screen-only">
-                    <a id="index_navbutton" href="/post/" class="mdl-navigation__link">Welcome</a>
-                    <a id="announcements_navbutton" href="/post/announcements/" class="mdl-navigation__link">Announcements</a>
-                    <a id="" href="/post/projects/" class="mdl-navigation__link">Projects</a>
-                    <a id="competitions_navbutton" href="/post/competitions/" class="mdl-navigation__link">Competitions</a>
-                    <a id="calendar_navbutton" href="/post/calendar/" class="mdl-navigation__link">Calendar</a>
-                    <a id="sponsors_navbutton" href="/post/sponsors/" class="mdl-navigation__link">Sponsors</a>
-                    <a id="about_us_navbutton" href="/post/about-us/" class="mdl-navigation__link">About Us</a>
+                    <a id="index_navbutton" href="/" class="mdl-navigation__link">Welcome</a>
+                    <a id="calendar_navbutton" href="/calendar/" class="mdl-navigation__link">Calendar</a>
+                    <a id="sponsors_navbutton" href="/sponsors/" class="mdl-navigation__link">Sponsors</a>
+                    <a id="about_us_navbutton" href="/about-us/" class="mdl-navigation__link">About Us</a>
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">SoDA@ASU</span>
             <nav class="mdl-navigation">
-                <a href="/post/" class="mdl-navigation__link">Welcome</a>
-                <a href="/post/announcements/" class="mdl-navigation__link">Announcements</a>
-                <a href="/post/projects/" class="mdl-navigation__link">Projects</a>
-                <a href="/post/competitions/" class="mdl-navigation__link">Competitons</a>
-                <a href="/post/calendar/" class="mdl-navigation__link">Calendar</a>
-                <a href="/post/sponsors/" class="mdl-navigation__link">Sponsors</a>
-                <a href="/post/about-us/" class="mdl-navigation__link">About Us</a>
+                <a href="/" class="mdl-navigation__link">Welcome</a>
+                <a href="/calendar/" class="mdl-navigation__link">Calendar</a>
+                <a href="/sponsors/" class="mdl-navigation__link">Sponsors</a>
+                <a href="/about-us/" class="mdl-navigation__link">About Us</a>
             </nav>
         </div>
 
